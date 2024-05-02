@@ -12,7 +12,7 @@ using namespace RHS;
 using namespace NumericalMethods;
 using namespace Orbit;
 
-constexpr scalar gravParam = 3.9860044158e14;
+constexpr scalar gravParam = 398600441500000;
 using State = EarthGravity::State;
 
 scalar calcM(const KeplerianOrbit& o){
@@ -41,9 +41,32 @@ TEST(first, Intergrator) {
 
   const State initialState = {
       r0, v0, Time::Time<Time::Scale::TT>()};
-  const scalar h = 2;
-  const IntegrationParameters p = {h};
+  const std::vector<scalar> h = {10000, 1000, 100, 10};
+  std::vector<scalar> errors;
+  std::vector<scalar> maxError(h.size());
+  std::vector<scalar> lnH(h.size());         // Логарифм шага
+  std::vector<scalar> lnMaxError(h.size());  // Логарифм ошибки
+
   const EarthGravity::ArgumentType endTime = initialState.argument + time;
-  const auto result = rungeKutta<EarthGravity, RK4>(rhs, initialState, p, endTime);
+  for (int i = 0; i < h.size(); ++i) {
+    const auto result = rungeKutta<EarthGravity, RK4>(rhs, initialState, {h[i]}, endTime);
+    maxError[i] = 0;
+    scalar t;
+    scalar error;
+    error = (result.position - r0).norm();
+    errors.push_back(error);
+    maxError[i] = std::max(maxError[i], error);
+
+    // Логарифмы шага и ошибок
+    lnH[i] = log(h[i]);
+    lnMaxError[i] = log(sqrt(maxError[i]));
+  }
+  for(const auto& error : errors){
+    std::cout << error << std::endl;
+  }
+const scalar t = 10;
+////  const IntegrationParameters p = {h};
+////  const EarthGravity::ArgumentType endTime = initialState.argument + time;
+//  const auto result = rungeKutta<EarthGravity, RK4>(rhs, initialState, p, endTime);
 
 }
