@@ -7,7 +7,7 @@
 #include "GeographicLib/GravityModel.hpp"
 #include "ballistics/types/Vector.hpp"
 #include "ballistics/time/Time.hpp"
-namespace Ballistics::Forces{
+namespace Ballistics::Force{
     class EarthGravityForce{
         GeographicLib::GravityModel model_;
     public:

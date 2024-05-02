@@ -9,8 +9,8 @@ namespace Ballistics::Orbit{
   struct KeplerianOrbit{
     scalar semiMajor;
     scalar eccentricity;
-    scalar periapsisArg; //w
     scalar inclination;
+    scalar periapsisArg; //w
     scalar ascNode;
     scalar trueAnomaly; //nu
   };

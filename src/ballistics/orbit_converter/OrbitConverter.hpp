@@ -10,7 +10,7 @@
 namespace Ballistics::Orbit{
 
 CartesianOrbit convertKeplerianToCartesian(const KeplerianOrbit& orbit, scalar gravityParameter) {
-  /** formulas from GMATMathSpec 3.1.3, p. 50-51*/
+
 
   const scalar semimajor = orbit.semiMajor;
   const scalar eccentricity = orbit.eccentricity;

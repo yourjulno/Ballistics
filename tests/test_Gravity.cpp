@@ -7,7 +7,7 @@
 #include "ballistics/ephemeris/Ephemeris.hpp"
 #include "ballistics/forces/EarthGravityForce.hpp"
 #include "ballistics/forces/ThirdBodyGravityForce.hpp"
-using namespace Ballistics::Forces;
+using namespace Ballistics::Force;
 using namespace Ballistics::Ephemeris;
 using namespace Ballistics::Time;
 
