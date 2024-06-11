@@ -59,7 +59,7 @@ integrateOneStep(const RHS &rhs, const typename RHS::State &initial,
  * @param endTime - время, до которого надо интегрироваться
  * @return State в момент времени endTime
  */
-template <typename RHS, typename ButcherTable>
+template <typename ButcherTable, typename RHS>
 typename RHS::State rungeKutta(const RHS &rhs,
                          const typename RHS::State &initialState,
                          const IntegrationParameters &integrationParameters,

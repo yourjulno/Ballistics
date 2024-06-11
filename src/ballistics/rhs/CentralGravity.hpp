@@ -14,7 +14,7 @@ namespace Ballistics::RHS {
 
 class EarthGravity {
 
-  Ballistics::Force::EarthGravityForce earthGravityForce;
+  Ballistics::Forces::EarthGravityForce earthGravityForce;
 
 public:
 
@@ -39,7 +39,7 @@ public:
 
   [[nodiscard]] inline IntegrationVector calc(const IntegrationState &integrationState) const noexcept {
 
-    const Vector3d acceleration = earthGravityForce.calcAccelerationECEF(integrationState.vector.segment<3>(0));
+    const Vector3d acceleration = earthGravityForce.calcForce(integrationState.vector.segment<3>(0));
 
     IntegrationVector result;
 

@@ -49,7 +49,7 @@ TEST(first, Intergrator) {
 
   const EarthGravity::ArgumentType endTime = initialState.argument + time;
   for (int i = 0; i < h.size(); ++i) {
-    const auto result = rungeKutta<EarthGravity, RK4>(rhs, initialState, {h[i]}, endTime);
+    const auto result = rungeKutta<RK4, EarthGravity>(rhs, initialState, {h[i]}, endTime);
     maxError[i] = 0;
     scalar t;
     scalar error;

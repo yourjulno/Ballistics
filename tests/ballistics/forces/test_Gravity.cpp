@@ -7,7 +7,7 @@
 #include "ballistics/ephemeris/Ephemeris.hpp"
 #include "ballistics/forces/EarthGravityForce.hpp"
 #include "ballistics/forces/ThirdBodyGravityForce.hpp"
-using namespace Ballistics::Force;
+using namespace Ballistics::Forces;
 using namespace Ballistics::Ephemeris;
 using namespace Ballistics::Time;
 
@@ -101,22 +101,22 @@ TEST(CALCFORCES, TEST) {
         double z = R * std::cos(Tet);
 
         const Ballistics::Vector3d acceleration1x1 =
-            earthGravity1x1.calcAccelerationECEF({x, y, z});
+            earthGravity1x1.calcForce({x, y, z});
         const Ballistics::Vector3d acceleration2x2 =
-            earthGravity2x2.calcAccelerationECEF({x, y, z});
+            earthGravity2x2.calcForce({x, y, z});
         const Ballistics::Vector3d acceleration3x3 =
-            earthGravity3x3.calcAccelerationECEF({x, y, z});
+            earthGravity3x3.calcForce({x, y, z});
 
         const Ballistics::Vector3d acceleration128x128 =
-            earthGravity128x128.calcAccelerationECEF({x, y, z});
+            earthGravity128x128.calcForce({x, y, z});
         const Ballistics::Vector3d acceleration64x64 =
-            earthGravity64x64.calcAccelerationECEF({x, y, z});
+            earthGravity64x64.calcForce({x, y, z});
         const Ballistics::Vector3d acceleration32x32 =
-            earthGravity32x32.calcAccelerationECEF({x, y, z});
+            earthGravity32x32.calcForce({x, y, z});
         const Ballistics::Vector3d acceleration16x16 =
-            earthGravity16x16.calcAccelerationECEF({x, y, z});
+            earthGravity16x16.calcForce({x, y, z});
         const Ballistics::Vector3d acceleration4x4 =
-            earthGravity4x4.calcAccelerationECEF({x, y, z});
+            earthGravity4x4.calcForce({x, y, z});
 
         meanDiffByR1122 += (acceleration1x1 - acceleration2x2).norm();
         meanDiffByR2233 += (acceleration3x3 - acceleration2x2).norm();

@@ -1,12 +1,12 @@
 //
 // Created by julia on 20.12.23.
 //
-#include "gtest/gtest.h"
-#include "ballistics/time/Time.hpp"
-#include "../third_party/rapidcsv/src/rapidcsv.h"
 #include "ballistics/forces/solar_radiation/PenumbraShadow.hpp"
-#include <limits>
+#include "ballistics/time/Time.hpp"
+#include "rapidcsv/src/rapidcsv.h"
+#include "gtest/gtest.h"
 #include <iostream>
+#include <limits>
 using namespace Ballistics;
 TEST(SHADOW, TEST)
 {

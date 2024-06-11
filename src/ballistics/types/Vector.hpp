@@ -12,6 +12,9 @@ namespace Ballistics {
     template<typename T>
     using Vector3 = Eigen::Vector3<T>;
     using Vector3d = Vector3<scalar>;
+    template<typename T, int size>
+    using Vector = Eigen::Vector<T, size>;
+
     using Vector6d = Eigen::Matrix<scalar, 6, 1>;  // Вектор размера 6 с типом scalar
 }
 #endif //BALLISTICS2023_VECTOR_HPP

@@ -6,17 +6,16 @@
 #define BALLISTICS2023_SPHEREMODEL_HPP
 
 #include "ballistics/types/Vector.hpp"
-namespace Ballistics::Force{
-
+namespace Ballistics::Forces{
 
   class SphereModel{
   public:
-      struct SatelliteParams{
+      struct SatParams{
         double area;
       };
 
       inline static Vector3d calcForce(const Vector3d& solarPressure,
-                         const SatelliteParams& satelliteParams) noexcept{
+                         const SatParams& satelliteParams) noexcept{
         return solarPressure * satelliteParams.area;
       }
 

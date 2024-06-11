@@ -1,15 +1,15 @@
 //
 // Created by julia on 20.12.23.
 //
+#include "ballistics/ephemeris/Ephemeris.hpp"
+#include "ballistics/time/DutContainer.hpp"
 #include "ballistics/time/Time.hpp"
 #include "ballistics/time/TimeConverter.hpp"
 #include "ballistics/types/types.hpp"
-#include "gtest/gtest.h"
 #include "ballistics/utils/csvParser.hpp"
 #include "ballistics/utils/ephems.hpp"
-#include "../third_party/fast-cpp-csv-parser/csv.h"
-#include "ballistics/time/DutContainer.hpp"
-#include "ballistics/ephemeris/Ephemeris.hpp"
+#include "fast-cpp-csv-parser/csv.h"
+#include "gtest/gtest.h"
 using namespace Ballistics;
 using namespace Ballistics::Utils;
 using namespace Ballistics::Time;

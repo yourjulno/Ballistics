@@ -1,9 +1,9 @@
-#include <gtest/gtest.h>
+#include "../../../resources/atmosphere/GOST4401_81.h"
 #include "ballistics/atmosphere/Density.hpp"
 #include "ballistics/forces/DragForce.hpp"
-#include "../resources/atmosphere/GOST4401_81.h"
-#include "ballistics/types/types.hpp"
 #include "ballistics/time/Time.hpp"
+#include "ballistics/types/types.hpp"
+#include <gtest/gtest.h>
 using namespace Ballistics;
 using namespace Ballistics::Forces;
 using namespace Ballistics::Time;
